@@ -7,11 +7,11 @@ const maxItems = 5;
 function addItem(item) {
     if (basket.length < maxItems) {
         basket.push(item);
-        console.log('An item was added to the basket:');
+        console.log('An item was added to the basket: True'); //Added 'True' text for testing clarification.
         return true;
     }
     else {
-        console.log('An item was added to the basket:');
+        console.log('An item was added to the basket: False'); //Added 'false' text for testing clarification.
         return false
     }
 }
@@ -25,7 +25,7 @@ console.log('in function addItem. I have added brisket and so this should return
 console.log(`Basket is now ${basket}`);
 console.log('in function addItem. I have added pizza and so this should return true.', addItem('pizza'));
 console.log(`Basket is now ${basket}`);
-console.log('in function addItem. I have added almonds and so this should return false.', addItem('almonds'));
+console.log('in function addItem. I have added almonds, but I was above the cart maximum and so this should return false.', addItem('almonds'));
 console.log(`Basket is now ${basket}`);
 
 function listItems() {
@@ -44,11 +44,29 @@ empty();
 
 function full() {
     if (basket >= maxItems) {
-        console.log('Your basket is full:');
+        console.log('Your basket is full: True'); //Added 'True' text for testing clarification.
         return true;
     }
     else
-        console.log('Your basket is full:');
+        console.log('Your basket is full: False'); //Added 'false' text for testing clarification.
     return false;
 }
 console.log(full());
+
+console.log('in function addItem. I have added tomato and so this should return true.', addItem('tomato'));
+console.log(`Basket is now ${basket}`);
+console.log('in function addItem. I have added lettuce and so this should return true.', addItem('lettuce'));
+console.log(`Basket is now ${basket}`);
+
+function removeItem(item) {
+    let index = basket.indexOf(item);
+ if (index > -1){
+    return console.log('the following item has been removed from your basket', basket.splice(index, 1, ''));
+ }
+ else
+ console.log('That item was not in the basket!');
+ return null;
+}
+console.log(removeItem('lettuce'));
+console.log(removeItem('bbq'));
+listItems();
