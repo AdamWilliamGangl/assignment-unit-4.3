@@ -24,5 +24,7 @@ for (product of basket){
 listItems()
 
 function empty(){
-
+basket = [];
+console.log('You have reset your basket, it now contains the following items:', basket);
 }
+empty();
