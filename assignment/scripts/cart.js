@@ -61,12 +61,13 @@ console.log(`Basket is now ${basket}`);
 function removeItem(item) {
     let index = basket.indexOf(item);
     if (index > -1) {
-        return console.log('the following item has been removed from your basket', basket.splice(index, 1, ''));
+        console.log('the following item has been removed from your basket', basket.splice(index, 1, ''));
+        return basket; // Returning the basket just to ensure that the code has been executed correctly.
     }
     else
         console.log(item, 'was not in the basket!');
     return null;
 }
-removeItem('lettuce'); //Removing something that is there.
+console.log(removeItem('lettuce')); //Removing something that is there.
 console.log(removeItem('bbq')); //Trying to remove something that is not there.
 listItems(); //Checking my basket again.
